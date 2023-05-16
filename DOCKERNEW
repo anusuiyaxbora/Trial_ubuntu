@@ -18,4 +18,4 @@ RUN R -e 'BiocManager::install(c("getDEE2","DESeq2","fgsea","clusterProfiler",>
 RUN git clone https://github.com/anusuiyaxbora/Trial_ubuntu.git
 
 # Set the container working directory
-ENV DIRPATH /enrichment_recipe WORKDIR $PROJECT
+ENV DIRPATH /enrichment_recipe WORKDIR $PROJECTNEW
