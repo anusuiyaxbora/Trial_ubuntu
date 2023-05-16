@@ -1,3 +1,5 @@
+FROM bioconductor/bioconductor_docker:RELEASE_3_16
+
 # Update apt-get
 RUN apt-get update \
 
