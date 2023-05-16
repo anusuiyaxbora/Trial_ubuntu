@@ -1,12 +1,15 @@
 # Update apt-get
 RUN apt-get update \
-    	&& apt-get install -y nano git \
+
+&& apt-get install -y nano git \
+
 ## Install the python package magic wormhole to send files
-    	&& pip install magic-wormhole \
+&& pip install magic-wormhole \
  ## Remove packages in '/var/cache/' and 'var/lib'
  ## to remove side-effects of apt-get update
-    	&& apt-get clean \
-    	&& rm -rf /var/lib/apt/lists/*
+&& apt-get clean 
+
+&& rm -rf /var/lib/apt/lists/*
 
 # Install required CRAN packages
 RUN R -e 'install.packages(c("kableExtra","vioplot","gplots","eulerr"))'
@@ -18,4 +21,4 @@ RUN R -e 'BiocManager::install(c("getDEE2","DESeq2","fgsea","clusterProfiler",>
 RUN git clone https://github.com/anusuiyaxbora/Trial_ubuntu.git
 
 # Set the container working directory
-ENV DIRPATH /enrichment_recipe WORKDIR $PROJECTNEW
+ENV DIRPATH /Trial_ubuntu WORKDIR $PROJECTNEW
